@@ -1,7 +1,7 @@
 # A1 - Piraten Karpen
 
-  * Author: < You name here >
-  * Email: < Your email here >
+  * Author: < Fatemeh(Haniye) Hamidizadeh >
+  * Email: < hamidizf@mcmaster.ca >
 
 ## Build and Execution
 
@@ -23,17 +23,20 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
  * Status: 
    * Pending (P), Started (S), Blocked (B), Done (D)
  * Definition of Done (DoD):
-   * < Your DoD goes here >
+   * < The program is compiled and runs without failure, gives the desired 
+output, and is ready to be tested by the user.  >
 
 ### Backlog 
 
 | MVP? | Id  | Feature  | Status  |  Started  | Delivered |
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
 | x   | F01 | Roll a dice |  S | 01/01/23 |  |
-| x   | F02 | Roll eight dices  |  B (F01) |   |
-| x   | F03 | Select how many games as command-line arg.  |  P  |   |
-| x   | F04 | end of game with three cranes | P | |
+| x   | F02 | Roll remaining dices  |  B (F01) |   |
+| x   | F03 | Play 42 games  |  P  |   |
+| x   | F04 | end of turn with three skulls | P | |
 | x   | F05 | Player keeping random dice at their turn | B (F02) | | 
-| x   | F06 | Score points: 3-of-a-kind | B (F04) | | 
+| x   | F06 | Score points: number of gold coins and diamonds multiplied 
+by 100 | B (F04) | | 
+| x   | F07 | Print the percentage of wins for each player | B (F03) | |
 | ... | ... | ... |
 
