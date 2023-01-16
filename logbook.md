@@ -4,4 +4,6 @@ report.
 January 14th 2023
 Updated the backlog and DoD according to step2 description. 
 January 15th 2023
-Completed Feature 1 & 2.
+Started and Completed Feature 1 & 2.
+January 16th 2023
+Started feature 5.
