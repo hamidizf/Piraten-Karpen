@@ -14,7 +14,7 @@ public class Dice {
     public String [] roll(int n){
         Dice myDice = new Dice();
         String []list=new String[n];
-        for (int i=0; i<n;i++){
+        for (int i=0; i<n; i++){
             list[i]= String.valueOf(myDice.roll());
             System.out.print(list[i]+" ");
 
