@@ -8,8 +8,18 @@ public class PiratenKarpen {
         Dice myDice = new Dice();
         System.out.println(myDice.roll());
         System.out.println("That's all folks!");
-        int n=8;
-        myDice.roll(n);
+        int n,i;
+        i=0;
+        for (int j=0; j<42; j++){
+            if (j==0){
+                n=8;
+            }else{
+                n=8-i;
+            }
+            myDice.roll(n);
+            
+        }
+
     }
     
 }
