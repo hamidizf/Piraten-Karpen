@@ -8,6 +8,8 @@ public class PiratenKarpen {
         Dice myDice = new Dice();
         System.out.println(myDice.roll());
         System.out.println("That's all folks!");
+        int n=8;
+        myDice.roll(n);
     }
     
 }
