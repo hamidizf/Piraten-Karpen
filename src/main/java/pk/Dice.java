@@ -1,5 +1,6 @@
 package pk;
-import java.util.Arrays;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Dice {
@@ -21,5 +22,17 @@ public class Dice {
         }
         return list;
     }
+    public String [] Keep(String [] Dices, ArrayList <Integer> Positions){
+        String [] Dices2=new String[Positions.size()];
+        for (int i=0; i<Positions.size(); i++){
+            Dices2[i]=Dices[Positions.get(i)];
+        }
+
+        return Dices2;
+    }
+    /*public String [] RollRemaining(){
+
+        return;
+    }*/
     
 }

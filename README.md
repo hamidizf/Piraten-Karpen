@@ -34,7 +34,7 @@ output, and is ready to be tested by the user.  >
 | x   | F02 | Roll remaining dices  | D | 15/01/23 | 15/01/23  |
 | x   | F03 | Play 42 games  |  P  |   |
 | x   | F04 | end of turn with three skulls | P | |
-| x   | F05 | Player keeping random dice at their turn | B (F02) | | 
+| x   | F05 | Player keeping random dice at their turn | D | 16/01/23 | 16/01/23 | 
 | x   | F06 | Score points: number of gold coins and diamonds multiplied by 100 | B (F04) | | 
 | x   | F07 | Print the percentage of wins for each player | B (F03) | |
 | ... | ... | ... |
