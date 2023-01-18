@@ -3,12 +3,13 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class PiratenKarpen {
-    public int Play(String [] list){
-        int score=0;
-
+   /* public int Play(int score){
+        boolean variable=true;
+        Dice myDice = new Dice();
+        while (!(EndTurn(String [] Dices)))
 
         return score;
-    }
+    }*/
 
     public static void main(String[] args) {
         System.out.println("Welcome to Piraten Karpen Simulator!");

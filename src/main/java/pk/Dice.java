@@ -38,14 +38,25 @@ public class Dice {
         return KeptDices;
     }
     public boolean EndTurn(String [] Dices){
-        int j=0;
+        int NumOfSkulls=0;
         for (int i=0; i<Dices.length; i++){
             if (Dices[i]=="SKULL"){
-                j++;
+                NumOfSkulls++;
             }
         }
-        if (j>=3) return true;
+        if (NumOfSkulls>=3) return true;
         return false;
+    }
+    public int Score(String [] Dices){
+        int score=0;
+        for (int i=0; i<Dices.length; i++){
+            if ((Dices[i]=="DIAMOND")||(Dices[i]=="GOLD")){
+                score++;
+            }
+        }
+        score=score*100;
+        return score;
+
     }
     
 }
