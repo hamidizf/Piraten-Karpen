@@ -27,15 +27,15 @@ public class PiratenKarpen {
                 break; //if user enters 'end' no further inputs will be taken
             }
             else if (Integer.parseInt(array)<0 | Integer.parseInt(array)>7){
-                System.out.println("Your entered position "+Integer.parseInt(array)+" is not covered by the list. Please Enter another number: ");
+                System.out.println("Your entered position "+Integer.parseInt(array)+" is not covered by the list.");
             }
              else{
                 Positions.add(Integer.parseInt(array)); //add user's input to the array
             }
         }
-        String [] liist= myDice.Keep(list, Positions);
-        for (int i=0; i<liist.length;i++){
-            System.out.print(liist[i]+" ");
+        ArrayList<String> liist= myDice.Keep(list, Positions);
+        for (int i=0; i<liist.size();i++){
+            System.out.print(liist.get(i)+" ");
         }
         /*int n,i, Player1, Player2, skulls;
         Player1=0;

@@ -7,3 +7,5 @@ January 15th 2023
 Started and Completed Feature 1 & 2.
 January 16th 2023
 Started and completed feature 5.
+January 17th 2023
+Started and completed feature 4.

@@ -22,17 +22,30 @@ public class Dice {
         }
         return list;
     }
-    public String [] Keep(String [] Dices, ArrayList <Integer> Positions){
-        String [] Dices2=new String[Positions.size()];
+    public ArrayList<String> Keep(String [] Dices, ArrayList <Integer> Positions){
+        ArrayList<String> KeptDices = new ArrayList<>();
         for (int i=0; i<Positions.size(); i++){
-            Dices2[i]=Dices[Positions.get(i)];
+            if (!(Dices[Positions.get(i)]=="SKULL")){
+                KeptDices.add(Dices[Positions.get(i)]);
+            }
+        }
+        for (int i=0; i<Dices.length; i++){
+            if (Dices[i]=="SKULL"){
+                KeptDices.add(Dices[i]);
+            }
         }
 
-        return Dices2;
+        return KeptDices;
     }
-    /*public String [] RollRemaining(){
-
-        return;
-    }*/
+    public boolean EndTurn(String [] Dices){
+        int j=0;
+        for (int i=0; i<Dices.length; i++){
+            if (Dices[i]=="SKULL"){
+                j++;
+            }
+        }
+        if (j>=3) return true;
+        return false;
+    }
     
 }
