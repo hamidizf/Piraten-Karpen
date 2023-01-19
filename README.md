@@ -32,10 +32,10 @@ output, and is ready to be tested by the user.  >
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
 | x   | F01 | Roll a dice |  D | 15/01/23 | 15/01/23  |
 | x   | F02 | Roll remaining dices  | D | 15/01/23 | 15/01/23  |
-| x   | F03 | Play 42 games  |  P  |   |
+| x   | F03 | Play 42 games  |  D  | 18/01/23 | 19/01/23 |
 | x   | F04 | end of turn with three skulls | D | 17/01/23 | 17/01/23|
 | x   | F05 | Player keeping random dice at their turn | D | 16/01/23 | 16/01/23 | 
 | x   | F06 | Score points: number of gold coins and diamonds multiplied by 100 | D | 17/01/23 | 17/01/23 | 
-| x   | F07 | Print the percentage of wins for each player | B (F03) | |
+| x   | F07 | Print the percentage of wins for each player |  D  | 18/01/23 | 19/01/23 |
 | ... | ... | ... |
 
