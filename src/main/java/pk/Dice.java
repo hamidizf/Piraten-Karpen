@@ -31,11 +31,22 @@ public class Dice {
         String [] Dices2;
         Dice myDice = new Dice();
         Dices2=myDice.roll8();
+        //System.out.println("new faces");
+        //myDice.print(Dices2);
         ArrayList<Integer> Positions = new ArrayList<>();
         Random positions = new Random();
-        int numofpositions=positions.nextInt(8)+1;
-        for (int i=0; i<numofpositions;i++){
-            Positions.add(positions.nextInt(8));
+        int numofpositions=positions.nextInt(6)+1;
+        int position;
+        for (int i=1; i<=numofpositions;i++){
+            position=positions.nextInt(8);
+            if (i>0 && Positions.contains(position)){
+                i--;
+            }else if(Dices[position]=="SKULL"){
+                i--;
+
+            }else{
+                Positions.add(position);
+            }
         }
         /*System.out.print("\nEnter the positions of dices that you want to keep starting from 0(the position of the dice on the left is 0 & count from there to the right)\n" +
                 "After each entered position hit the 'Enter' button and When you are done enter 'end'\n"+ "Positions:");
@@ -51,12 +62,14 @@ public class Dice {
                 Positions.add(Integer.parseInt(array)); //add user's input to the array
             }
         }*/
-
+        System.out.println("Positions of dices that will be kept(will not be rerolled):");
         for (int i=0; i<Positions.size(); i++){
+            System.out.print(Positions.get(i)+" ");
             if (!(Dices[Positions.get(i)]=="SKULL")){
                 Dices2[Positions.get(i)]=Dices[Positions.get(i)];
             }
         }
+        System.out.println();
         for (int i=0; i<Dices.length; i++){
             if (Dices[i]=="SKULL"){
                 Dices2[i]=Dices[i];

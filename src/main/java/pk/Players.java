@@ -41,7 +41,7 @@ public class Players {
                 System.out.println("Player 2 is playing...");
                 score2 += CurrentTurn();
                 player1 = true;
-                System.out.println("Player 2 is playing...\nscore: "+score2);
+                System.out.println("score: "+score2);
             }
         }
         System.out.println("Player1 score: "+score1+"\nPlayer2 score: "+score2);
