@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Dice {
     static Logger LOGGER= LogManager.getLogger(Dice.class);
@@ -30,7 +30,7 @@ public class Dice {
         }
         //System.out.println();
     }
-    public String [] KeepnReroll(String [] Dices, Scanner input){
+    public String [] KeepnReroll(String [] Dices){
         String [] Dices2;
         Dice myDice = new Dice();
         Dices2=myDice.roll8();

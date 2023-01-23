@@ -31,7 +31,7 @@ public class Game {
         }
         percentage1=(player1/42.0)*100;
         percentage2=(player2/42.0)*100;
-        System.out.printf("The percentage of win for player1 is %.2f%% and the percentage of win for player2 is %.2f%%",percentage1,percentage2 );
+        System.out.printf("The percentage of win for player1 is %.2f%% and the percentage of win for player2 is %.2f%%.\n",percentage1,percentage2 );
 
 
     }

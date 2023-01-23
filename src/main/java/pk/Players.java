@@ -26,7 +26,7 @@ public class Players {
                 score=myDice.Score(Dices);
                 return score;
             }else {
-                Dices=myDice.KeepnReroll(Dices, input);
+                Dices=myDice.KeepnReroll(Dices);
             }
         }
         return 0;
