@@ -1,10 +1,12 @@
 package pk;
+
+
 import java.util.Random;
 import java.text.DecimalFormat;
 public class Game {
     Players players=new Players();
     Random Boolean = new Random();
-    DecimalFormat dFormat = new DecimalFormat("#%");
+
     public void start(){
         String winner="";
         int player1=0;

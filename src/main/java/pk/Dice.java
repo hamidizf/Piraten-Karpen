@@ -1,11 +1,14 @@
 package pk;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Dice {
-
+    static Logger LOGGER= LogManager.getLogger(Dice.class);
     public Faces roll() {
         int howManyFaces = Faces.values().length;
         //System.out.println("  (DEBUG) there are " + howManyFaces + " faces");
@@ -23,9 +26,9 @@ public class Dice {
     }
     public void print(String [] Dices){
         for (int i=0; i<8; i++){
-            System.out.print(Dices[i]+" ");
+            LOGGER.debug(Dices[i]+" ");
         }
-        System.out.println();
+        //System.out.println();
     }
     public String [] KeepnReroll(String [] Dices, Scanner input){
         String [] Dices2;
@@ -62,14 +65,14 @@ public class Dice {
                 Positions.add(Integer.parseInt(array)); //add user's input to the array
             }
         }*/
-        System.out.println("Positions of dices that will be kept(will not be rerolled):");
+        LOGGER.info("Positions of dices that will be kept(will not be rerolled):");
         for (int i=0; i<Positions.size(); i++){
-            System.out.print(Positions.get(i)+" ");
+            LOGGER.debug(Positions.get(i)+" ");
             if (!(Dices[Positions.get(i)]=="SKULL")){
                 Dices2[Positions.get(i)]=Dices[Positions.get(i)];
             }
         }
-        System.out.println();
+        //System.out.println();
         for (int i=0; i<Dices.length; i++){
             if (Dices[i]=="SKULL"){
                 Dices2[i]=Dices[i];

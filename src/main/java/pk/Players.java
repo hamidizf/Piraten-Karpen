@@ -1,5 +1,8 @@
 package pk;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -7,6 +10,7 @@ public class Players {
     Scanner input=new Scanner(System.in);
     Dice myDice = new Dice();
     Random Boolean = new Random();
+    static Logger LOGGER= LogManager.getLogger(Players.class);
 
     public int CurrentTurn(){
         int score;
@@ -18,7 +22,7 @@ public class Players {
             //if (answer.equals("Y")||answer.equals("y"))
             //else if (answer.equals("N")||answer.equals("n"))
             if (Boolean.nextBoolean()==true){
-                System.out.println("end of the turn");
+                LOGGER.info("end of the turn");
                 score=myDice.Score(Dices);
                 return score;
             }else {
@@ -33,24 +37,24 @@ public class Players {
         String winner = " ";
         while ((score1 < 6000 && score2 < 6000) || (score1 == score2 && score1 >= 6000)) {
             if (player1) {
-                System.out.println("Player 1 is playing...");
+                LOGGER.info("Player 1 is playing...");
                 score1 += CurrentTurn();
                 player1 = false;
-                System.out.println("Score: "+score1);
+                LOGGER.info("Score: "+score1);
             } else {
-                System.out.println("Player 2 is playing...");
+                LOGGER.info("Player 2 is playing...");
                 score2 += CurrentTurn();
                 player1 = true;
-                System.out.println("score: "+score2);
+                LOGGER.info("Score: "+score2);
             }
         }
-        System.out.println("Player1 score: "+score1+"\nPlayer2 score: "+score2);
+        LOGGER.info("Player1 score: "+score1+"\nPlayer2 score: "+score2);
         if (score1 >= 6000 && score1 > score2) {
             winner = "Player1";
-            System.out.println("Player1 won!");
+            LOGGER.info("Player1 won!");
         } else if (score2 >= 6000 && score2 > score1) {
             winner = "Player2";
-            System.out.println("Player2 won!");
+            LOGGER.info("Player2 won!");
         }
         return winner;
     }

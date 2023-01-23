@@ -15,3 +15,7 @@ started feature 3 and feature 7.
 January 19th
 Feature 3 and feature 7 completed! all features were tested again, and 
 everything worked properly. 
+January 21st
+Step 3 startded and completed!
+January 23rd 
+Answering quesyions of step 3. starting step4. updating mvp.
