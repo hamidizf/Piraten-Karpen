@@ -15,6 +15,13 @@
     * `mvn package`
   * To run the packaged delivery:
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
+  * To turn the trace mode on, open the file log4j2.xml and change `OFF` to `ALL` in this section of the code: 
+>
+    <Loggers>
+        <Root level="OFF">
+            <AppenderRef ref="Console"/>   
+        </Root>
+    </Loggers>
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 
