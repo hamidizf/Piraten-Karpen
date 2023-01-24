@@ -66,6 +66,7 @@ public class Strategies {
         Dices2 = myDice.roll8();
         HashMap<Faces, Integer> NumOfFaces;
         NumOfFaces=myDice.NumOfFaces(Dices);
+        //
         for (int i = 0; i < Dices.length; i++) {
             if (Dices[i] == Faces.SKULL) {
                 Dices2[i] = Dices[i];
