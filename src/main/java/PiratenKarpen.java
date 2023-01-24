@@ -21,20 +21,15 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
         System.out.println(Arrays.toString(test));
         System.out.println("That's all folks!");
         Game game= new Game();
-        //System.out.println(args[0]);
-        //System.out.println(args[1]);
-        String hel="random";
-        String hi="combo";
-
         try{
-           /* while(((args[0]!="random" && args[0]!="combo")||(args[1]!="random" && args[1]!="combo"))){
+            while((!args[0].equals("random") && !args[0].equals("combo")||(!args[1].equals("random") && !args[1].equals("combo")))){
                 System.out.println("Entered Strategies are not valid");
                 System.out.println("Please Enter the Strategy for Player1:");
                 args[0]=input.next();
                 System.out.println("Please Enter the Strategy for Player2:");
                 args[1]=input.next();
-            }*/
-            game.start(hel,hi);
+            }
+            game.start(args[0],args[1]);
         }catch(Exception e){
             LOGGER.info("Strategy for both players is random");
             game.start("random","random");
