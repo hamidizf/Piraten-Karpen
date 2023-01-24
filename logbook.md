@@ -25,3 +25,6 @@ Answering quesyions of step 3. starting step4. updating mvp.
 Feature 8 and 9 started and completed. Created a subroutine count faces. 
 Implemented the score subroutine. 
 Started feature 10.
+January 24th
+started and completed feature 10 & feature 11. modified strategies class, 
+completed combokeep subroutine.

@@ -14,7 +14,6 @@
   * To package the project as a turn-key artefact:
     * `mvn package`
   * To run the packaged delivery:
-<<<<<<< HEAD
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar`
   * To turn the trace mode on, open the file log4j2.xml and change `OFF` to `ALL` in this section of code:
 >
@@ -47,7 +46,7 @@ output, and is ready to be tested by the user.  >
 | x   | F07 | Print the percentage of wins for each player |  D  | 18/01/23 | 19/01/23 |
 | x   | F08 | Score points: 3 of a kind | D | 23/01/23 | 23/01/23|
 | x   | F09 | Score points: 4 of a kind and above | D | 23/01/23 | 23/01/23|
-| x   | F10 | new strategy: rerolling the dices that are not 3 of a kind and above |  | /01/23 | /01/23|
-| x   | F11 |  |  | /01/23 | /01/23|
+| x   | F10 | new strategy: rerolling the dices that are not 3 of a kind and above | D | 24/01/23 | 24/01/23|
+| x   | F11 | Keep Diamond or Gold coins that are more than 2 | D | 24/01/23 | 24/01/23|
 | ... | ... | ... |
 

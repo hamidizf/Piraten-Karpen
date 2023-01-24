@@ -117,7 +117,7 @@ public class Dice {
                 }
             }
         score+=(NumOfFaces.get(Faces.DIAMOND)+NumOfFaces.get(Faces.GOLD))*100;
-        LOGGER.debug("Score for this turn"+score);
+        LOGGER.debug("Score for this turn: "+score);
         return score;
     }
 }

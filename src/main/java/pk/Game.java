@@ -7,20 +7,20 @@ public class Game {
     Players players=new Players();
     Random Boolean = new Random();
 
-    public void start(){
+    public void start(String strategy1, String strategy2){
         String winner="";
         int player1=0;
         int player2=0;
         double percentage1, percentage2;
         for(int i=0; i<42;i++){
             if (i==0){
-                winner=players.play(Boolean.nextBoolean());
+                winner=players.play(Boolean.nextBoolean(), strategy1,strategy2);
             }else{
                 if (winner=="Player1"){
 
-                    winner= players.play(true);
+                    winner= players.play(true,strategy1,strategy2);
                 }else{
-                    winner= players.play(false);
+                    winner= players.play(false,strategy1,strategy2);
                 }
             }
             if (winner=="Player1"){
