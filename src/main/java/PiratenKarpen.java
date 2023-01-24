@@ -23,6 +23,9 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
         Game game= new Game();
         //System.out.println(args[0]);
         //System.out.println(args[1]);
+        String hel="random";
+        String hi="combo";
+
         try{
            /* while(((args[0]!="random" && args[0]!="combo")||(args[1]!="random" && args[1]!="combo"))){
                 System.out.println("Entered Strategies are not valid");
@@ -31,7 +34,7 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
                 System.out.println("Please Enter the Strategy for Player2:");
                 args[1]=input.next();
             }*/
-            game.start(args[0],args[1]);
+            game.start(hel,hi);
         }catch(Exception e){
             LOGGER.info("Strategy for both players is random");
             game.start("random","random");
