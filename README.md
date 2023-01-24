@@ -44,8 +44,8 @@ output, and is ready to be tested by the user.  >
 | x   | F05 | Player keeping random dice at their turn | D | 16/01/23 | 16/01/23 | 
 | x   | F06 | Score points: number of gold coins and diamonds multiplied by 100 | D | 17/01/23 | 17/01/23 | 
 | x   | F07 | Print the percentage of wins for each player |  D  | 18/01/23 | 19/01/23 |
-| x   | F08 | Score points: 3 of a kind |  | /01/23 | /01/23|
-| x   | F09 | Score points: 4 of a kind and above |  | /01/23 | /01/23|
+| x   | F08 | Score points: 3 of a kind | D | 23/01/23 | 23/01/23|
+| x   | F09 | Score points: 4 of a kind and above | D | 23/01/23 | 23/01/23|
 | x   | F10 | new strategy: rerolling the dices that are not 3 of a kind and above |  | /01/23 | /01/23|
 | x   | F11 |  |  | /01/23 | /01/23|
 | ... | ... | ... |

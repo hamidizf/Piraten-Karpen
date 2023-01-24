@@ -1,7 +1,11 @@
 import pk.Dice;
 import pk.Game;
+import pk.Faces;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+
+import java.util.Arrays;
+
 public class PiratenKarpen {
 static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
 
@@ -13,7 +17,8 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
         //System.out.println("I'm rolling a dice");
         Dice myDice = new Dice();
         LOGGER.debug(myDice.roll());
-        //System.out.println(myDice.roll());
+        Faces[] test=myDice.roll8();
+        System.out.println(Arrays.toString(test));
         System.out.println("That's all folks!");
         Game game= new Game();
         game.start();

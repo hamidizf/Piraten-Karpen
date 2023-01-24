@@ -2,7 +2,7 @@ package pk;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -14,16 +14,12 @@ public class Players {
 
     public int CurrentTurn(){
         int score;
-        String [] Dices=myDice.roll8();
-        myDice.print(Dices);
+        Faces [] Dices=myDice.roll8();
+        LOGGER.debug(Arrays.toString(Dices));
         while (!myDice.EndTurn(Dices)){
-            //System.out.println("If you want to end the turn enter Y/y, otherwise Enter N/n");
-            //String answer = input.next();
-            //if (answer.equals("Y")||answer.equals("y"))
-            //else if (answer.equals("N")||answer.equals("n"))
             if (Boolean.nextBoolean()==true){
                 LOGGER.info("end of the turn");
-                score=myDice.Score(Dices);
+                score=myDice.Score(myDice.NumOfFaces(Dices));
                 return score;
             }else {
                 Dices=myDice.KeepnReroll(Dices);
@@ -40,12 +36,12 @@ public class Players {
                 LOGGER.info("Player 1 is playing...");
                 score1 += CurrentTurn();
                 player1 = false;
-                LOGGER.info("Score: "+score1);
+                LOGGER.info("Total Score: "+score1);
             } else {
                 LOGGER.info("Player 2 is playing...");
                 score2 += CurrentTurn();
                 player1 = true;
-                LOGGER.info("Score: "+score2);
+                LOGGER.info("TotalScore: "+score2);
             }
         }
         LOGGER.info("Player1 score: "+score1+"\nPlayer2 score: "+score2);

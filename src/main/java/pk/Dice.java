@@ -5,10 +5,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-
+import java.util.HashMap;
+import java.util.List;
+import java.util.Arrays;
 public class Dice {
-    static Logger LOGGER= LogManager.getLogger(Dice.class);
+    static Logger LOGGER = LogManager.getLogger(Dice.class);
+
     public Faces roll() {
         int howManyFaces = Faces.values().length;
         //System.out.println("  (DEBUG) there are " + howManyFaces + " faces");
@@ -16,39 +18,36 @@ public class Dice {
         Random bag = new Random();
         return Faces.values()[bag.nextInt(howManyFaces)];
     }
-    public String [] roll8(){
+
+    public Faces[] roll8() {
         Dice myDice = new Dice();
-        String [] Dices=new String[8];
-        for (int i=0; i<8; i++){
-            Dices[i]= String.valueOf(myDice.roll());
+        Faces[] Dices = new Faces[8];
+        for (int i = 0; i < 8; i++) {
+            Dices[i] = myDice.roll();
         }
         return Dices;
     }
-    public void print(String [] Dices){
-        for (int i=0; i<8; i++){
-            LOGGER.debug(Dices[i]+" ");
-        }
-        //System.out.println();
-    }
-    public String [] KeepnReroll(String [] Dices){
-        String [] Dices2;
+
+    public Faces[] KeepnReroll(Faces[] Dices) {
+        Faces[] Dices2;
         Dice myDice = new Dice();
-        Dices2=myDice.roll8();
+        Dices2 = myDice.roll8();
         //System.out.println("new faces");
         //myDice.print(Dices2);
-        ArrayList<Integer> Positions = new ArrayList<>();
+        List<Integer> Positions = new ArrayList<>();
         Random positions = new Random();
-        int numofpositions=positions.nextInt(6)+1;
+        int numofpositions = positions.nextInt(6) + 1;
         int position;
-        for (int i=1; i<=numofpositions;i++){
-            position=positions.nextInt(8);
-            if (i>0 && Positions.contains(position)){
+        for (int i = 1; i <= numofpositions; i++) {
+            position = positions.nextInt(8);
+            if (i > 0 && Positions.contains(position)) {
                 i--;
-            }else if(Dices[position]=="SKULL"){
+            } else if (Dices[position] == Faces.SKULL) {
                 i--;
 
-            }else{
+            } else {
                 Positions.add(position);
+                Dices2[position] = Dices[position];
             }
         }
         /*System.out.print("\nEnter the positions of dices that you want to keep starting from 0(the position of the dice on the left is 0 & count from there to the right)\n" +
@@ -66,41 +65,59 @@ public class Dice {
             }
         }*/
         LOGGER.info("Positions of dices that will be kept(will not be rerolled):");
-        for (int i=0; i<Positions.size(); i++){
+        LOGGER.debug(Arrays.toString(Positions.toArray()));
+        /*for (int i=0; i<Positions.size(); i++){
             LOGGER.debug(Positions.get(i)+" ");
-            if (!(Dices[Positions.get(i)]=="SKULL")){
+            if (!(Dices[Positions.get(i)]==Faces.SKULL)){
                 Dices2[Positions.get(i)]=Dices[Positions.get(i)];
             }
-        }
+        }*/
         //System.out.println();
-        for (int i=0; i<Dices.length; i++){
-            if (Dices[i]=="SKULL"){
-                Dices2[i]=Dices[i];
+        for (int i = 0; i < Dices.length; i++) {
+            if (Dices[i] == Faces.SKULL) {
+                Dices2[i] = Dices[i];
             }
         }
-        myDice.print(Dices2);
+        LOGGER.debug(Arrays.toString(Dices2));
         return Dices2;
     }
-    public boolean EndTurn(String []  Dices){
-        int NumOfSkulls=0;
-        for (int i=0; i<Dices.length; i++){
-            if (Dices[i]=="SKULL"){
+
+    public boolean EndTurn(Faces[] Dices) {
+        int NumOfSkulls = 0;
+        for (int i = 0; i < Dices.length; i++) {
+            if (Dices[i] == Faces.SKULL) {
                 NumOfSkulls++;
             }
         }
-        if (NumOfSkulls>=3) return true;
+        if (NumOfSkulls >= 3) return true;
         return false;
     }
-    public int Score(String []  Dices){
-        int score=0;
-        for (int i=0; i<Dices.length; i++){
-            if ((Dices[i]=="DIAMOND")||(Dices[i]=="GOLD")){
-                score++;
-            }
+    public HashMap NumOfFaces(Faces[] Dices){
+        HashMap<Faces, Integer> NumOfFaces = new HashMap<>();
+        Faces faces[] = Faces.values();
+        for (Faces face : faces) {
+            NumOfFaces.put(face, 0);
         }
-        score=score*100;
-        return score;
-
+        for (Faces dice : Dices) {
+            NumOfFaces.put(dice, NumOfFaces.get(dice) + 1);
+        }
+        return NumOfFaces;
     }
-    
+    public int Score(HashMap<Faces,Integer> NumOfFaces) {
+        int score = 0;
+        for (Faces face : NumOfFaces.keySet()) {
+                switch (NumOfFaces.get(face)) {
+                    case 3: score+=100;break;
+                    case 4:score+=200;break;
+                    case 5:score+=500;break;
+                    case 6:score+=1000;break;
+                    case 7:score+=2000;break;
+                    case 8:score+=4000;break;
+                    default:score+=0;break;
+                }
+            }
+        score+=(NumOfFaces.get(Faces.DIAMOND)+NumOfFaces.get(Faces.GOLD))*100;
+        LOGGER.debug("Score for this turn"+score);
+        return score;
+    }
 }
