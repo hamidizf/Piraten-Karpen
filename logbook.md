@@ -28,3 +28,7 @@ Started feature 10.
 January 24th
 started and completed feature 10 & feature 11. modified strategies class, 
 completed combokeep subroutine.
+Completed Step 5(Features 12,13, and 14).
+Created Cards class and a subroutine for drawing the card and score 
+affect based on the SeaBattle card.
+

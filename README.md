@@ -48,5 +48,10 @@ output, and is ready to be tested by the user.  >
 | x   | F09 | Score points: 4 of a kind and above(priority in terms of business value) | D | 23/01/23 | 23/01/23|
 | x   | F10 | new strategy: rerolling the dices that are not 3 of a kind and above | D | 24/01/23 | 24/01/23|
 | x   | F11 | Keep Diamond or Gold coins that are more than 2 | D | 24/01/23 | 24/01/23|
+| x   | F12 | Sea Battle card: 2 swords | D | 24/01/23 | 24/01/23|
+| x   | F13 | Sea Battle card: 3swords or more | D | 24/01/23 | 24/01/23|
+| x   | F14 | new strategy: gain points according to cards | D | 24/01/23 | 24/01/23|
+| x   | F15 | end of turn with three skulls |  | /01/23 | /01/23|
+| x   | F16 | end of turn with three skulls |  | /01/23 | /01/23|
 | ... | ... | ... |
 

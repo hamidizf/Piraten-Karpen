@@ -1,8 +1,12 @@
+import pk.Cards;
 import pk.Dice;
 import pk.Game;
 import pk.Faces;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -21,6 +25,7 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
         System.out.println(Arrays.toString(test));
         System.out.println("That's all folks!");
         Game game= new Game();
+
         try{
             while((!args[0].equals("random") && !args[0].equals("combo")||(!args[1].equals("random") && !args[1].equals("combo")))){
                 System.out.println("Entered Strategies are not valid");
@@ -29,10 +34,10 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
                 System.out.println("Please Enter the Strategy for Player2:");
                 args[1]=input.next();
             }
-            game.start(args[0],args[1]);
+            game.start(args);
         }catch(Exception e){
             LOGGER.info("Strategy for both players is random");
-            game.start("random","random");
+            game.start(new String[]{"random", "random"});
         }
     }
 }
