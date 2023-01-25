@@ -14,17 +14,17 @@ public class Players {
     static Logger LOGGER= LogManager.getLogger(Players.class);
     Cards cards=new Cards();
 
-    public int CurrentTurn(String strategy, List<Integer> CardDeck){
-        int score;
+    public int CurrentTurn(String strategy){
+        int score=0;
         Strategy PlayerStrategy = new Strategy();
-        String card=cards.draw(CardDeck);
+        String card=cards.draw();
         LOGGER.debug("Card:"+card);
         Faces [] Dices=myDice.roll8();
         LOGGER.debug(Arrays.toString(Dices));
         while (!myDice.EndTurn(Dices)){
             if (Boolean.nextBoolean()==true&& cards.ScoreAffect(card, myDice.NumOfFaces(Dices))>=0){
                 LOGGER.info("end of the turn");
-                score = myDice.Score(myDice.NumOfFaces(Dices)) + cards.ScoreAffect(card, myDice.NumOfFaces(Dices));
+                score = myDice.Score(Dices,card)+cards.ScoreAffect(card, myDice.NumOfFaces(Dices));
                 LOGGER.debug("Score for this turn: "+score);
                 return score;
             }else {
@@ -35,24 +35,26 @@ public class Players {
                 }
             }
         }
-        score= cards.ScoreAffect(card,myDice.NumOfFaces(Dices));
+        if(cards.ScoreAffect(card,myDice.NumOfFaces(Dices))<=0){
+            score= cards.ScoreAffect(card,myDice.NumOfFaces(Dices));
+        }
         LOGGER.info("end of turn!");
         LOGGER.info("Score for this turn: "+score);
         return score;
     }
 
-    public String play(boolean player1, String[]  Strategies, List<Integer> CardDeck) {
+    public String play(boolean player1, String[]  Strategies) {
         int score1 = 0, score2 = 0;
         String winner = " ";
         while ((score1 < 6000 && score2 < 6000) || (score1 == score2 && score1 >= 6000)) {
             if (player1) {
                 LOGGER.info("Player 1 is playing...");
-                score1 += CurrentTurn(Strategies[0],CardDeck);
+                score1 += CurrentTurn(Strategies[0]);
                 player1 = false;
                 LOGGER.info("Total Score: "+score1);
             } else {
                 LOGGER.info("Player 2 is playing...");
-                score2 += CurrentTurn(Strategies[1],CardDeck);
+                score2 += CurrentTurn(Strategies[1]);
                 player1 = true;
                 LOGGER.info("TotalScore: "+score2);
             }

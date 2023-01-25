@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Strategy {
     Faces[] Dices2;
-    HashMap<Faces, Integer> NumOfFaces;
+    Map<Faces, Integer> NumOfFaces;
     Dice myDice = new Dice();
     static Logger LOGGER= LogManager.getLogger(Strategy.class);
     public Faces[] SkullsKeep(Faces[] Dices2,Faces[] Dices){
@@ -23,6 +23,10 @@ public class Strategy {
         List<Integer> Positions = new ArrayList<>();
         Random positions = new Random();
         int numofpositions = positions.nextInt(6) + 1;
+        NumOfFaces=myDice.NumOfFaces(Dices);
+        if (numofpositions>=2) {
+            numofpositions -= NumOfFaces.get(Faces.SKULL);
+        }
         int position;
         for (int i = 1; i <= numofpositions; i++) {
             position = positions.nextInt(8);
@@ -46,16 +50,16 @@ public class Strategy {
         Dices2 = myDice.roll8();
         NumOfFaces=myDice.NumOfFaces(Dices);
         int KeptDices= NumOfFaces.get(Faces.SKULL);
-        for (int i = 0; i < Dices.length; i++) {
-            if((NumOfFaces.get(Dices[i])>=2&&(Dices[i]==Faces.DIAMOND||Dices[i]==Faces.GOLD))&&KeptDices<6){
-                Dices2[i] = Dices[i];
-                KeptDices++;
-            }
-        }
         for (int z = 0; z < Dices.length; z++) {
             if (NumOfFaces.get(Dices[z]) >= 4 && KeptDices < 6) {
                 Dices2[z] = Dices[z];
                 KeptDices ++;
+            }
+        }
+        for (int i = 0; i < Dices.length; i++) {
+            if((NumOfFaces.get(Dices[i])>=2&&(Dices[i]==Faces.DIAMOND||Dices[i]==Faces.GOLD))&&KeptDices<6){
+                Dices2[i] = Dices[i];
+                KeptDices++;
             }
         }
         Dices2=SkullsKeep(Dices2,Dices);
@@ -105,6 +109,28 @@ public class Strategy {
         LOGGER.debug(Arrays.toString(Dices2));
         return Dices2;
     }
+    public Faces[] MonkeyKeep(Faces[] Dices){
+        Dices2 = myDice.roll8();
+        NumOfFaces=myDice.NumOfFaces(Dices);
+        int KeptDices= NumOfFaces.get(Faces.SKULL);
+        for (int i = 0; i < Dices.length; i++) {
+            if((NumOfFaces.get(Dices[i])>=2&&(Dices[i]==Faces.DIAMOND||Dices[i]==Faces.GOLD))&&KeptDices<6){
+                Dices2[i] = Dices[i];
+                KeptDices++;
+            }
+        }
+        for (int z = 0; z < Dices.length; z++) {
+            if ((Dices[z]==Faces.MONKEY ||Dices[z]==Faces.PARROT) && KeptDices < 6) {
+                Dices2[z] = Dices[z];
+                KeptDices ++;
+            }
+        }
+        Dices2=SkullsKeep(Dices2,Dices);
+        LOGGER.debug("Num of kept dices: "+KeptDices);
+        LOGGER.debug(Arrays.toString(Dices2));
+        return Dices2;
+    }
+
     public Faces[] Select(String strategy, Faces[] Dices,String card){
         Faces[] Dices2=new Faces[8];
         if (strategy.equals("random")){
@@ -117,6 +143,8 @@ public class Strategy {
             LOGGER.info("card strategy :");
             if(card=="SeaBattle 2Swords"||card=="SeaBattle 3Swords"||card=="SeaBattle 4Swords"){
                 Dices2=SeaBattleKeep(Dices,card);
+            } else{
+                Dices2=MonkeyKeep(Dices);
             }
         }
         return Dices2;

@@ -8,6 +8,7 @@ import java.util.Random;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Arrays;
+import java.util.Map;
 public class Dice {
     static Logger LOGGER = LogManager.getLogger(Dice.class);
 
@@ -38,8 +39,9 @@ public class Dice {
         if (NumOfSkulls >= 3) return true;
         return false;
     }
-    public HashMap NumOfFaces(Faces[] Dices){
-        HashMap<Faces, Integer> NumOfFaces = new HashMap<>();
+
+    public Map NumOfFaces(Faces[] Dices) {
+        Map<Faces, Integer> NumOfFaces = new HashMap<>();
         Faces DiceFaces[] = Faces.values();
         for (Faces DiceFace : DiceFaces) {
             NumOfFaces.put(DiceFace, 0);
@@ -49,20 +51,33 @@ public class Dice {
         }
         return NumOfFaces;
     }
-    public int Score(HashMap<Faces,Integer> NumOfFaces) {
+
+    public int Score(Faces[] Dices, String card) {
         int score = 0;
-        for (Faces face : NumOfFaces.keySet()) {
-                switch (NumOfFaces.get(face)) {
-                    case 3: score+=100;break;
-                    case 4:score+=200;break;
-                    case 5:score+=500;break;
-                    case 6:score+=1000;break;
-                    case 7:score+=2000;break;
-                    case 8:score+=4000;break;
-                    default:score+=0;break;
-                }
+        int Bonus = 1;
+        if (card == "MonkeyB") {
+            for (int i = 0; i < Dices.length; i++)
+                if (Dices[i] == Faces.PARROT)
+                    Dices[i] = Faces.MONKEY;
+        }
+        Map<Faces, Integer> NumofFaces = NumOfFaces(Dices);
+        for (Faces face : NumofFaces.keySet()) {
+            switch (NumofFaces.get(face)) {
+                case 3: score += 100;break;
+                case 4: score += 200;break;
+                case 5: score += 500;break;
+                case 6: score += 1000;break;
+                case 7: score += 2000;break;
+                case 8: score += 4000;break;
+                default: score += 0;break;
             }
-        score+=(NumOfFaces.get(Faces.DIAMOND)+NumOfFaces.get(Faces.GOLD))*100;
+            if (face == Faces.SKULL && NumofFaces.get(face) > 0) {
+                Bonus = 0;
+            } else if (face != Faces.DIAMOND && face != Faces.GOLD && NumofFaces.get(face) < 3) {
+                Bonus = 0;
+            }
+        }
+        score += (NumofFaces.get(Faces.DIAMOND) + NumofFaces.get(Faces.GOLD)) * 100 + Bonus * 500;
         return score;
     }
 }

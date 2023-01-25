@@ -46,12 +46,12 @@ output, and is ready to be tested by the user.  >
 | x   | F07 | Print the percentage of wins for each player |  D  | 18/01/23 | 19/01/23 |
 | x   | F08 | Score points: 3 of a kind(priority in terms of business value) | D | 23/01/23 | 23/01/23|
 | x   | F09 | Score points: 4 of a kind and above(priority in terms of business value) | D | 23/01/23 | 23/01/23|
-| x   | F10 | new strategy: rerolling the dices that are not 3 of a kind and above | D | 24/01/23 | 24/01/23|
-| x   | F11 | Keep Diamond or Gold coins that are more than 2 | D | 24/01/23 | 24/01/23|
-| x   | F12 | Sea Battle card: 2 swords | D | 24/01/23 | 24/01/23|
+| x   | F10 | New Strategy: Keep Diamond or Gold coins that are more than 2 | D | 24/01/23 | 24/01/23 |
+| x   | F11 | New strategy: rerolling the dices that are not 3 of a kind and above | D | 24/01/23 | 24/01/23|
+| x   | F12 | New card(Sea Battle card): 2 swords | D | 24/01/23 | 24/01/23|
 | x   | F13 | Sea Battle card: 3swords or more | D | 24/01/23 | 24/01/23|
-| x   | F14 | new strategy: gain points according to cards | D | 24/01/23 | 24/01/23|
-| x   | F15 | end of turn with three skulls |  | /01/23 | /01/23|
-| x   | F16 | end of turn with three skulls |  | /01/23 | /01/23|
+| x   | F14 | new strategy: gain points according to Sea Battle cards | D | 24/01/23 | 24/01/23|
+| x   | F15 | New card: Monkey Business card |  | 24/01/23 | /01/23|
+| x   | F16 | new strategy: gain points according to  Monkey Business cards |  | /01/23 | /01/23|
 | ... | ... | ... |
 

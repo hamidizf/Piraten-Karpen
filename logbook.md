@@ -31,4 +31,4 @@ completed combokeep subroutine.
 Completed Step 5(Features 12,13, and 14).
 Created Cards class and a subroutine for drawing the card and score 
 affect based on the SeaBattle card.
-
+Started step 6. 

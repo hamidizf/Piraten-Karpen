@@ -10,22 +10,21 @@ public class Game {
     Random Boolean = new Random();
 
     public void start(String [] Strategies){
+
         String winner="";
         int player1=0;
         int player2=0;
         double percentage1, percentage2;
-        List<Integer> MyCardDeck=new ArrayList<>();
-        for (int i=0;i<35;i++)
-            MyCardDeck.add(i);
+
         for(int i=0; i<42;i++){
             if (i==0){
-                winner=players.play(Boolean.nextBoolean(), Strategies,MyCardDeck);
+                winner=players.play(Boolean.nextBoolean(), Strategies);
             }else{
                 if (winner=="Player1"){
 
-                    winner= players.play(true,Strategies,MyCardDeck);
+                    winner= players.play(true,Strategies);
                 }else{
-                    winner= players.play(false,Strategies,MyCardDeck);
+                    winner= players.play(false,Strategies);
                 }
             }
             if (winner=="Player1"){
