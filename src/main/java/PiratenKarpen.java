@@ -1,27 +1,14 @@
-import pk.Cards;
-import pk.Dice;
-import pk.Game;
-import pk.Faces;
+import pk.*;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import java.util.Scanner;
-import java.util.Arrays;
-
 public class PiratenKarpen {
 static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
 
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
-
         System.out.println("Welcome to Piraten Karpen Simulator!");
-        LOGGER.info("I'm rolling a dice");
-        //System.out.println("I'm rolling a dice");
-        Dice myDice = new Dice();
-        LOGGER.debug(myDice.roll());
-        Faces[] test=myDice.roll8();
-        System.out.println(Arrays.toString(test));
-        System.out.println("That's all folks!");
-        Game game= new Game();
+        GameSimulator Game= new GameSimulator();
 
         try{
             while((!args[0].equals("random") && !args[0].equals("combo")||(!args[1].equals("random") && !args[1].equals("combo")))){
@@ -31,10 +18,10 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
                 System.out.println("Please Enter the Strategy for Player2:");
                 args[1]=input.next();
             }
-            game.start(args);
+            Game.simulate(args);
         }catch(Exception e){
             LOGGER.info("Strategy for both players is random");
-            game.start(new String[]{"random", "random"});
+            Game.simulate(new String[]{"random", "random"});
         }
     }
 }
