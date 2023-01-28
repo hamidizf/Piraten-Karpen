@@ -108,12 +108,10 @@ public class Strategy {
         return KeptPos;
     }
     public Faces[] Sorceress(Faces[] Dices, String strategy, int count){
-        System.out.println("entered sorceress func ");
         Random Boolean = new Random();
         if (count==1){
             mycount=1;
             for (int i=0;i<Dices.length;i++){
-                System.out.println("entered forloop ");
                 if (Dices[i]==Faces.SKULL && strategy.equals("combo")){
                     mycount=0;
                     Dices[i]=myDice.roll();

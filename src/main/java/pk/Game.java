@@ -32,9 +32,7 @@ public class Game {
             count=1;
         Faces [] Dices=myDice.roll8();
         LOGGER.debug(Arrays.toString(Dices));
-        System.out.println("count before wile loop: " +count);
         while (!EndTurn(Dices,count)){
-            System.out.println("count after wile loop: " +count);
             if (strategy=="random"&&Boolean.nextBoolean()==true){
                 if (player.CardScore(card, myDice.NumOfFaces(Dices))<0){
                     score= player.CardScore(card, myDice.NumOfFaces(Dices));
@@ -52,7 +50,6 @@ public class Game {
             }else {
                 Dices = PlayerStrategy.Select(strategy, Dices, card,count);
                 count= PlayerStrategy.mycount;
-                System.out.println("count after mycount: " +count);
             }
         }
         LOGGER.info("end of turn! You got 3 SKULLs :( ");
