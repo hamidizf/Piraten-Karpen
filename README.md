@@ -51,7 +51,8 @@ output, and is ready to be tested by the user.  >
 | x   | F12 | New card(Sea Battle card): 2 swords | D | 24/01/23 | 24/01/23|
 | x   | F13 | Sea Battle card: 3swords or more | D | 24/01/23 | 24/01/23|
 | x   | F14 | new strategy: gain points according to Sea Battle cards | D | 24/01/23 | 24/01/23|
-| x   | F15 | New card: Monkey Business card |  | 24/01/23 | /01/23|
-| x   | F16 | new strategy: gain points according to  Monkey Business cards |  | /01/23 | /01/23|
+| x   | F15 | New card: Monkey Business card | D | 24/01/23 | 25/01/23|
+| x   | F16 | new strategy: gain points according to  Monkey Business cards | D | 25/01/23 | 25/01/23|
+| x   | F17 | New card: Sorceress card | D | 28/01/23 | 28/01/23|
 | ... | ... | ... |
 
