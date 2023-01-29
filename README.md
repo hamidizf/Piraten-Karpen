@@ -17,7 +17,7 @@
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar`
   * To run the simulator:
     * `mvn exec:java -Dexec.args="random combo"`
-   or
+    * or
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar random combo`
   * To turn the trace mode on, open the file log4j2.xml and change `OFF` to `ALL` in this section of code:
 >
