@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Collections;
 public class Cards {
     static Logger LOGGER= LogManager.getLogger(Cards.class);
-    public List<Integer>cardDeck(){
+    public List<Integer>cardDeck(){ //create card deck with 35 cards
         List<Integer> MyCardDeck=new ArrayList<>();
         for (int i=0;i<35;i++)
             MyCardDeck.add(i);
         return MyCardDeck;
     }
     List<Integer>MyCardDeck=cardDeck();
-    public String draw(){
+    public String draw(){ //associate numbers with card names when they are drawn
         Collections.shuffle(MyCardDeck);
         LOGGER.debug("Card number: "+MyCardDeck.get(0));
         if(MyCardDeck.get(0)<2)

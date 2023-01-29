@@ -9,9 +9,8 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
         Scanner input=new Scanner(System.in);
         System.out.println("Welcome to Piraten Karpen Simulator!");
         GameSimulator Game= new GameSimulator();
-
-        try{
-            while((!args[0].equals("random") && !args[0].equals("combo")||(!args[1].equals("random") && !args[1].equals("combo")))){
+        try{//checking inputs and passing them to the game simulator
+            while((!args[0].equals("random") && !args[0].equals("combo"))||(!args[1].equals("random") && !args[1].equals("combo"))){
                 System.out.println("Entered Strategies are not valid");
                 System.out.println("Please Enter the Strategy for Player1:");
                 args[0]=input.next();
@@ -19,7 +18,7 @@ static Logger LOGGER=LogManager.getLogger(PiratenKarpen.class);
                 args[1]=input.next();
             }
             Game.simulate(args);
-        }catch(Exception e){
+        }catch(Exception e){ //random strategy for both players when there is no inputs
             LOGGER.info("Strategy for both players is random");
             Game.simulate(new String[]{"random", "random"});
         }
