@@ -15,6 +15,10 @@
     * `mvn package`
   * To run the packaged delivery:
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar`
+  * To run the simulator:
+    * `mvn exec:java -Dexec.args="random combo"`
+   or
+    * `java -jar target/piraten-karpen-jar-with-dependencies.jar random combo`
   * To turn the trace mode on, open the file log4j2.xml and change `OFF` to `ALL` in this section of code:
 >
     <Loggers>
@@ -30,8 +34,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
  * Status: 
    * Pending (P), Started (S), Blocked (B), Done (D)
  * Definition of Done (DoD):
-   * < The program is compiled and runs without failure, gives the desired 
-output, and is ready to be tested by the user.  >
+   * < The program, upon successful compilation and execution, produces the intended output and is prepared for user evaluation and testing.  >
 
 ### Backlog 
 
