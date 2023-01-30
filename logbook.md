@@ -51,7 +51,13 @@ Created Cards class and a subroutine for drawing the card and card score based o
 Started step 6. 
 
 January 25th 2023:
+
 completed step6. created a subroutine to keep Monkey and Parrot faces when Monkey business card is drawn. Implemented score subroutine to return the score for Monkeys and Parrots as one combination.
 
 January 28th 2023:
+
 Added Sorceress card. Organized the code and classes, and commented on the code. created the last release! Updated README.md file and updated the logbook. Started to answer Questions related to Step 5 & 6! We are almost done!
+
+January 29th 2023:
+
+Completed the report by finalizing answers to step 5 & 6 and adding the bonus paragraph. Finally! The assignment is done :)
